@@ -1,0 +1,18 @@
+export PATH=$PATH$( find $HOME/bin/ -type d -printf ":%p" )
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/pipx:/usr/local/bin:$PATH
+export PATH=$HOME/.cargo/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$HOME/go/bin:/usr/local/bin:$PATH
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Set the Go proxy
+export GOPROXY="https://proxy.golang.org,direct"
+
+# Disable the Go checksum database
+export GOSUMDB=off
+
+# Enable Go modules
+export GO111MODULE=on

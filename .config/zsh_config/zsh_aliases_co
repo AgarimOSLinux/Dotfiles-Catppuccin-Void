@@ -1,0 +1,270 @@
+# NOTE: Depending on the version of nano you have, --linenumbers is helpful
+#alias nano='nano --smarthome --multibuffer --const --autoindent'
+
+# Create an alias to run the default editor (like sudoedit without the sudo)
+alias edit="$EDITOR"
+
+# Edit this .zshrc file
+alias ez='edit ~/.zshrc'
+
+# Search command line history
+alias h='history | grep'
+
+# Show the previous path
+alias pwd-='echo ${OLDPWD}'
+
+# Show full path of file or wildcard
+alias fullpath='find "`pwd`" -name'
+
+# List the PATH environment variable directories
+alias path='echo -e ${PATH//:/\\n}'
+
+# Change to the home directory
+alias home='cd ~'
+
+# Allow changing directory when missing a space
+alias cd..='cd ..'
+
+# Go back directories dot style
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Go back directories dot dot number style
+alias ..2='..; ..'
+alias ..3='..2; ..'
+alias ..4='..3; ..'
+alias ..5='..4; ..'
+
+# If the mlocate package is installed
+if [[ -x "$(command -v locate)" ]]; then
+	# Case insensitive search and display only files present in your system
+	alias locate='locate -i -e'
+
+	# Update the locate database before locating a file
+	alias ulocate='sudo updatedb && locate'
+
+	# Always update the locate (mlocate) database as root
+	alias updatedb='sudo updatedb'
+
+	# Display the number of matching entries
+	alias locount='locate -c'
+fi
+
+# When changing a directory, don't show an extra line with the directory
+alias cd='cd >/dev/null'
+
+# When copying files, prompt before overwriting a file
+alias cp='cp -i'
+
+# When moving files, prompt for confirmation if the destination path exists
+# Use -f if you want to skip all prompts (-i option is ignored)
+alias mv='mv -i'
+
+# Prompt before every removal
+alias rm='rm -i'
+
+# Remove a directory and all files
+alias rmd='\rm --recursive --force --verbose'
+
+# When shredding files, shred no matter permissions and remove the file(s)
+alias shred='shred --force --remove --verbose'
+
+# Make parent directories as needed
+alias mkdir='mkdir -pv'
+
+# List disk space of immediate folders one level deep
+alias folders='du -kh --max-depth=1'
+
+# List block devices but show more info about the files systems and permissions
+# and removes all snap packages
+alias lsb='lsblk --fs --perms | grep -v \/snap'
+
+# Aliases for BtrFS file systems
+if [[ -x "$(command -v btrfs)" ]]; then
+	alias btrcheck='sudo btrfs fi show'                        # Check status of raid drives
+	alias btrstats='sudo btrfs device stats'                   # Show device statistics
+	alias btrscrub='sudo btrfs scrub start'                    # Start a scrub
+	alias btrpause='sudo btrfs scrub cancel'                   # Cancel or pause a scrub
+	alias btrresume='sudo btrfs scrub resume'                  # Resume a paused scrub
+	alias btrstatus='sudo btrfs scrub status'                  # Show status of a scrub
+	alias btrdefragfile='sudo btrfs filesystem defragment -vf' # Defrag a file
+	alias btrdefragdir='sudo btrfs filesystem defragment -rvf' # Defrag a directory
+
+fi
+
+# Glow is one of the best CLI markdown viewers with pager support
+# Link: https://github.com/charmbracelet/glow
+if [[ -x "$(command -v glow)" ]]; then
+	alias glow='glow --all --pager'
+
+	# Use --local if you want to load markdown without internet files or images
+	alias glowsafe='glow --all --pager --local'
+fi
+
+# Colorize the grep command output for ease of use (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Colorize messages for the kernel ring buffer
+alias dmesg='dmesg --color'
+
+# Clear the screen with both clear and cls shorthand
+alias cls='clear'
+
+# Alias's for safe and forced reboots
+alias rebootsafe='sudo shutdown -r now'
+alias rebootforce='sudo shutdown -r -n now'
+
+# Stop pinging after sending 5 ECHO_REQUEST packets
+alias ping='ping -c 5'
+
+# Do not wait for ping interval 1 second, go fast
+alias fastping='ping -c 100 -s.2'
+
+# Get local IP addresses
+alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+# Get public IP address (several options)
+alias ipexternal='wget -qO- ifconfig.me/ip && echo'
+# alias ipexternal='curl ipinfo.io/ip && echo'
+
+# Display amount of free and used memory in MB
+alias free='free -m'
+
+# When reporting a snapshot of the current processes:
+# a = all users
+# u = user-oriented format providing detailed information
+# x = list the processes without a controlling terminal
+# f = display a tree view of parent to child processes
+alias ps='ps auxf'
+
+# Show top ten processes
+alias cpu='ps aux | sort -r -nk +4 | head | $PAGER'
+
+# Show jobs
+alias j='jobs -l'
+
+# Get active X-window process ID (3 second delay)
+alias activewinpid='sleep 3 && xdotool getactivewindow getwindowpid'
+
+
+# Alias to fuzzy find files, preview them, and launch in an editor
+if [[ -x "$(command -v fzf)" ]]; then
+	if [[ -x "$(command -v xdg-open)" ]]; then
+		alias fzfpreview='xdg-open $(fzf --info=inline --preview="$PAGER {}")'
+	else
+		alias fzfpreview='edit $(fzf --info=inline --preview="$PAGER {}")'
+	fi
+fi
+
+# Aliases for archives
+alias mkbz2='tar -cvjf'
+alias unbz2='tar -xvjf'
+alias mkgz='tar -cvzf'
+alias ungz='tar -xvzf'
+alias mktar='tar -cvf'
+alias untar='tar -xvf'
+
+# SHA1
+alias sha1='openssl sha1'
+
+
+# Git Alias: Provides many useful Git alias commands
+	# This alias will install/update the Git alias commands file
+	# Link: https://github.com/GitAlias/gitalias
+	# Edit ~/.gitconfig and then include the path to this file like this:
+	# [include]
+	# path = gitalias.txt
+	alias gitalias='curl --output "$HOME/gitalias.txt" https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt'
+	
+
+# Nearly everything you can do in Git but in a terminal UI
+	# Link: https://github.com/Extrawurst/gitui
+	if [[ -x "$(command -v gitui)" ]]; then
+		alias ggu='gitui'
+	fi
+
+# Searches for filenames (can use wildcards)
+if [[ -x "$(command -v fdfind)" ]]; then
+	# Use fdfind if installed
+	# Link: https://github.com/sharkdp/fd
+	alias f='fdfind'
+elif [[ -x "$(command -v fd)" ]]; then
+	# Use the shorter fd command
+	alias f='fd'
+else
+	alias f='find . -type f -iname'
+fi
+
+# Searches for directories (can use wildcards)
+# Example: finddir config
+# Example: finddir "This has spaces"
+alias finddir='find . -type d -iname'
+
+# To count how many files are in your current file system location:
+alias countfiles='find . -type f | wc -l'
+
+# dua Disk Space Analyzer in interactive mode (in color)
+# Link: https://github.com/Byron/dua-cli
+# Install: curl -LSfs https://raw.githubusercontent.com/byron/dua-cli/master/ci/install.sh | \sh -s -- --git byron/dua-cli --target x86_64-unknown-linux-musl --crate dua
+if [[ -f "$HOME/.cargo/bin/dua" ]]; then
+	alias diskspace="$HOME/.cargo/bin/dua i"
+elif [[ -x "$(command -v dua)" ]]; then
+	alias diskspace='dua i'
+fi
+
+# Make mount command output pretty and human readable format
+alias mount='mount | column -t'
+alias m='mount'
+alias um='umount'
+
+# Display disk space available
+alias df='df -khT'
+
+if [[ -x "$(command -v delta)" ]]; then
+	# delta - Beautiful side by side colored diff with Git support and syntax highlighting
+	# Link: https://github.com/dandavison/delta
+	# Info: Add listed settings to your ~/.gitconfig
+	alias diff='delta --side-by-side --line-numbers'
+elif [[ -x "$(command -v icdiff)" ]]; then
+	# Icdiff - Improved (side by side) colored diff
+	# Link: https://github.com/jeffkaufman/icdiff
+	alias diff='icdiff --line-numbers --strip-trailing-cr'
+elif [[ -x "$(command -v colordiff)" ]]; then
+	# Colorize diff output if colordiff is installed
+	alias diff='colordiff'
+fi
+
+# Alias to launch a document, file, or URL in it's default X application
+if [[ -x "$(command -v xdg-open)" ]]; then
+	alias open='xdg-open'
+fi
+
+
+# Show colors with the dir command
+if [[ -x "$(command -v dir)" ]]; then
+	alias dir='dir --color=auto'
+	alias vdir='vdir --color=auto'
+fi
+
+# If bat is installed, use it instead of cat
+# https://github.com/sharkdp/bat
+if [[ -x "$(command -v batcat)" ]]; then
+	alias bat='batcat'
+	alias cat='batcat'
+elif [[ -x "$(command -v bat)" ]]; then
+	alias cat='bat'
+fi
+
+# If lsx enhanced directory navigation is found, source it
+# Link: https://github.com/souvikinator/lsx
+if [[ -f "$HOME/.config/lsx/lsx.sh" ]]; then
+	source ~/.config/lsx/lsx.sh
+fi
+# If lsx is installed, alias it to see hidden directories
+if [[ -x "$(command -v lsx)" ]]; then
+	alias lsx='lsx -a'
+fi

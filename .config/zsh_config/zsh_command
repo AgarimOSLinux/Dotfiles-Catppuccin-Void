@@ -1,0 +1,17 @@
+# Security for X apps
+if [[ -x "$(command -v xhost)" ]]; then
+	xhost +local:root > /dev/null 2>&1
+fi
+
+command -v wal > /dev/null && wal -n -q -i  ~/Imágenes/walls/wallpaper.jpg
+command -v starship > /dev/null && eval "$(starship init zsh)"
+#command -v oh-my-posh > /dev/null && eval "$(oh-my-posh init zsh --config ~/.poshthemes/kali.omp.json)"
+#command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
+#command -v atuin > /dev/null && eval "$(atuin init zsh)"
+#command -v mcfly > /dev/null && eval "$(mcfly init zsh)"
+command -v neofetch > /dev/null && neofetch
+command -v thefuck > /dev/null && eval $(thefuck --alias fk)
+command -v pipx > /dev/null &&  eval "$(register-python-argcomplete pipx)"
+command -v pipenv  > /dev/null && eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+#source "$HOME/.zsh/spaceship/spaceship.zsh"
+

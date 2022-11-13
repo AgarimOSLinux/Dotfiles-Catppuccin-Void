@@ -1,0 +1,7 @@
+if [[ -f "/usr/share/fzf-git-bindings/functions.sh" ]]; then
+	source /usr/share/fzf-git-bindings/functions.sh
+fi
+
+if [[ -f "/usr/share/fzf-git-bindings/key-binding.zsh" ]]; then
+	source /usr/share/fzf-git-bindings/key-binding.zsh
+fi

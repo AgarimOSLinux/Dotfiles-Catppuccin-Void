@@ -1,0 +1,41 @@
+# Make sure if the history file is deleted...
+if [[ ! -f "$HOME/.zsh_history" ]]; then
+	# Recreate an empty copy so history apps don't show errors
+	touch "$HOME/.zsh_history"
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_aliases ]]; then
+         source  $HOME/.config/zsh_config/zsh_aliases
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_aliases_co ]]; then
+         source  $HOME/.config/zsh_config/zsh_aliases_co
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_aliases_void ]]; then
+         source  $HOME/.config/zsh_config/zsh_aliases_void
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_command ]]; then
+         source  $HOME/.config/zsh_config/zsh_command
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_exports ]]; then
+         source  $HOME/.config/zsh_config/zsh_exports
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_functions ]]; then
+         source  $HOME/.config/zsh_config/zsh_functions
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_histf ]]; then
+         source  $HOME/.config/zsh_config/zsh_histf
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_path ]]; then
+         source  $HOME/.config/zsh_config/zsh_path
+fi
+
+if [[ -f $HOME/.config/zsh_config/zsh_sourced ]]; then
+         source  $HOME/.config/zsh_config/zsh_sourced
+fi

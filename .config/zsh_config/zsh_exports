@@ -1,0 +1,36 @@
+export TERM=xterm-256color
+export use_color=true
+export NCURSES_NO_UTF8_ACS=1
+export VISUAL="nano"
+export EDITOR="nano"
+export SUDO_EDITOR="nano"
+export FCEDIT="nano"
+export BROWSER="firefox"
+
+export LESS='-M~g -i -z-4 -F -R -P%t?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+
+export XBPS_DISTDIR=/home/jose/Plantillas/void-linux/void-packages
+export FZF_DEFAULT_OPTS="--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+# Color for manpages in less makes manpages a little easier to read
+if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]]; then
+	export PAGER=less
+	export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+elif [[ -x "$(command -v src-hilite-lesspipe.sh)" ]]; then
+	export PAGER=less
+	export LESSOPEN="| src-hilite-lesspipe.sh %s"
+elif [[ -x "$(command -v moar)" ]]; then
+	export PAGER=moar
+elif [[ -x "$(command -v most)" ]]; then
+	export PAGER=most
+else
+	export PAGER=less
+fi
+

@@ -1,0 +1,142 @@
+#shortcuts dirs
+alias descargas="cd ~/Descargas"
+alias videos="cd ~/Vídeos"
+alias themes="cd /usr/share/themes"
+alias .themes="cd $HOME/.themes"
+alias fonts="cd /usr/share/fonts"
+alias .fonts='cd $HOME/.fonts'
+alias icons="cd /usr/share/icons"
+alias .icons='cd $HOME/.icons'
+alias b="cd $HOME/bin"
+alias co='cd ~/.config/'
+alias ca='cd ~/.cargo/bin/'
+alias lo='cd ~/.local/'
+alias r="cd ~/Plantillas/git-repos/"
+
+
+#shorted
+alias sz="source $HOME/.zshrc"
+alias del="rm -rf"
+alias ft="fc-cache -f -v"
+alias sf="fc-list : family spacing | grep -i"
+alias q='exit'
+alias c="cargo install-update --all"
+alias t='topgrade'
+alias mx='chmod a+x'
+alias gpa="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep --color=never -E "state|to\ full|percentage"'
+alias folders='du -kh --max-depth=1'
+alias cc='sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"' 
+alias clock="tty-clock -csbt -C6 -f %d-%m-%y"
+alias ducks="du -cksh * | sort -hr"
+alias disks="df -hTlx squashfs -x tmpfs -x devtmpfs"
+alias porn="mpv 'http://www.pornhub.com/random' --no-resume-playback"
+alias nf="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/NerdFetch/master/nerdfetch | sh"
+alias ca="cargo install dota2cat ripgrep sd tealdeer dua-cli du-dust wthrr xcp duf navi mcfly rm-improved lsd"
+alias ls='exa --icons --all --classify --group-directories-first --color=auto --color-scale'
+alias ct="sudo EDITOR=nano crontab -e"
+
+# Corona
+alias top10="curl 'https://corona-stats.online?top=10&source=2&minimal=true&emojis=true'"
+alias top20="curl 'https://corona-stats.online?top=20&source=2&minimal=true&emojis=true'"
+alias top30="curl 'https://corona-stats.online?top=30&source=2&minimal=true&emojis=true'"
+alias top40="curl 'https://corona-stats.online?top=40&source=2&minimal=true&emojis=true'"
+
+alias coves="curl -L covid19-cli.wareneutron.com/quiet/es"
+alias covat="curl -L covid19-cli.wareneutron.com/quiet/at"
+alias covuk="curl -L covid19-cli.wareneutron.com/quiet/gb"
+alias covde="curl -L covid19-cli.wareneutron.com/quiet/de"
+alias covus="curl -L covid19-cli.wareneutron.com/quiet/us"
+alias covfr="curl -L covid19-cli.wareneutron.com/quiet/fr"
+alias covru="curl -L covid19-cli.wareneutron.com/quiet/ru"
+alias covil="curl -L covid19-cli.wareneutron.com/quiet/il"
+alias covit="curl -L covid19-cli.wareneutron.com/quiet/it"
+alias covbe="curl -L covid19-cli.wareneutron.com/quiet/be"
+alias covpt="curl -L covid19-cli.wareneutron.com/quiet/pt"
+alias covnl="curl -L covid19-cli.wareneutron.com/quiet/nl"
+alias covch="curl -L covid19-cli.wareneutron.com/quiet/ch"
+alias covhu="curl -L covid19-cli.wareneutron.com/quiet/hu"
+alias covcz="curl -L covid19-cli.wareneutron.com/quiet/cz"
+alias covsk="curl -L covid19-cli.wareneutron.com/quiet/sk"
+alias covpl="curl -L covid19-cli.wareneutron.com/quiet/pl"
+alias covhr="curl -L covid19-cli.wareneutron.com/quiet/hr"
+alias covrs="curl -L covid19-cli.wareneutron.com/quiet/rs"
+alias covbg="curl -L covid19-cli.wareneutron.com/quiet/bg"
+alias covau="curl -L covid19-cli.wareneutron.com/quiet/au"
+alias covtr="curl -L covid19-cli.wareneutron.com/quiet/tr"
+alias covlv="curl -L covid19-cli.wareneutron.com/quiet/lv"
+alias covlt="curl -L covid19-cli.wareneutron.com/quiet/lt"
+
+
+# suffix aliases
+alias -s md=nvim
+alias -s gmi=nvim
+alias -s png=imv
+alias -s jpg=imv
+alias -s pdf=zathura
+alias -s epub=zathura
+alias -s mp4=mpv
+alias -s mp3=mpv
+alias -s flac=mpv
+alias -s mkv=mpv
+alias -s avi=mpv
+
+
+#Other aliases
+
+alias less='less -N -R'
+alias trash="sudo rm -rf ~/.local/share/Trash/*"
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+alias 000='chmod -R 000'
+alias 644='chmod -R 644'
+alias 666='chmod -R 666'
+alias 755='chmod -R 755'
+alias 777='chmod -R 777'
+alias root='sudo -i'
+alias su='sudo -i'
+alias npmaf="npm audit fix"
+alias ter="sensors"
+alias wget='wget -c'
+alias mountedinfo='df -hT'
+alias bd='cd "$OLDPWD"'
+alias ipt='sudo /sbin/iptables'
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+alias firewall='iptlist'
+alias userlist="cut -d: -f1 /etc/passwd"
+alias ex="extract"
+alias cl='cal'
+alias header='curl -I' # get web server headers #
+alias headerc='curl -I --compress' # find out if remote server supports gzip / mod_deflate or not #
+alias who='whoami'
+alias spt='speedtest-cli'
+alias wifi="wirelessNetworksInRange"
+alias usermod="sudo usermod -a -G"
+alias showme="ytfzf -t"
+alias showmemore="ytfzf -t -cO"
+alias isntall="install"
+alias mac="inxi -zv8"
+alias weather="inxi -wxxx"
+alias wtr="curl -s 'https://wttr.in/ottakring?q&n&p' | head -n -3"
+alias temp="watch -n 2 sensors"
+alias machine="inxi -Fxxxrza"
+alias dc="dotacat"
+alias py='python3'
+alias pip='pip3'
+alias clone="git clone --depth 1"
+alias calc='python3 -qi -c "from math import *"'
+alias joke='curl https://icanhazdadjoke.com && printf "\n"'
+alias mywifi="lspci | grep Wireless"
+alias yt="yt-dlp --embed-metadata -i"
+alias yta="yt -x -f bestaudio/best"
+alias fecha="date +'%d-%b-%Y-%H:%M:%S'"
+alias dk="r && cd eduke32 && gl"
+alias meow="echo '\n /| ､\n(°､ ｡ 7\n |､  ~ヽ\n じしf_,)〳\n'"

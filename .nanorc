@@ -1,0 +1,32 @@
+set linenumbers
+set bookstyle
+set smarthome
+set boldtext
+set autoindent
+set backup
+set backupdir "/home/jose/.backups/"
+set casesensitive
+set historylog
+set  speller "aspell -c"
+set softwrap
+set tabsize 10
+set tabstospaces
+set mouse
+set saveonexit
+set constantshow
+set zap
+set magic
+
+# Colors
+set titlecolor magenta
+set statuscolor magenta
+set errorcolor red
+set selectedcolor red
+set stripecolor yellow
+set numbercolor green
+set keycolor green
+set functioncolor blue
+
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano/extra/*.nanorc"
+include "/opt/nanorc/*.nanorc"

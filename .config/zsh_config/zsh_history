@@ -1,0 +1,977 @@
+: 1665467976:0;nano zsh_path
+: 1665604579:0;neovim
+: 1665604784:0;remove xdg-desktop-portal-kde
+: 1665604806:0;sudo xbps-remove -ROo xdg-desktop-portal-kde
+: 1665604910:0;search libpanel
+: 1665609346:0;mv config.conf conf
+: 1665609386:0;rm config.conf
+: 1665609391:0;mv conf config.conf
+: 1665609580:0;cd .config/zsh_config
+: 1665609605:0;nano zsh_command
+: 1665609617:0;nano zsh_exports
+: 1665615075:0;updatd
+: 1665615168:0;sudo xbps-remove -F plasma-systemmonitor
+: 1665615236:0;sudo xbps-remove -F plasma-workspace-wallpapers
+: 1665615277:0;sudo xbps-remove -F xdg-desktop-portal-kde
+: 1665615359:0;cd /etc/xbps.d
+: 1665615428:0;sudo nano 10-ignore.conf
+: 1665615464:0;search plasma-sys
+: 1665615503:0;search plasma-work
+: 1665615530:0;search xdg-desktop
+: 1665615556:0;sudo xbps-install -S kde5
+: 1665615571:0;sudo xbps-install -S plasma-systemmonitor
+: 1665615596:0;nano 10-ignore.conf
+: 1665642618:0;cargo install broot passafe skim
+: 1665642798:0;search libxcb
+: 1665642806:0;install libxcb-devel
+: 1665643060:0;cargo install --locked --features system-clipboard
+: 1665643076:0;cargo install --locked --features system-clipboard zee
+: 1665643474:0;zee --init
+: 1665643480:0;zee --help
+: 1665643494:0;zee --create-settings
+: 1665643515:0;zee --build
+: 1665687997:0;zee
+: 1665694358:0;zee Update
+: 1665699077:0;cargo install --git https://github.com/angelofallars/treefetch
+: 1665699146:0;chsh -s /usr/bin/zsh
+: 1665830111:0;install starship
+: 1665830560:0;clone https://github.com/devraza/wallpapers devraza-wallpapers
+: 1665831305:0;cd Plantillas/git-repos/alacritty
+: 1665831326:0;cd mig_gedit-themes
+: 1665831331:0;cd nemo-extensions
+: 1665831338:0;cd opendwm
+: 1665831346:0;cd paxr
+: 1665831356:0;cargo search paxr
+: 1665831421:0;cargo install --locked --release
+: 1665831433:0;cargo install --locked
+: 1665831448:0;cargo install --path --locked
+: 1665831454:0;zee README.md
+: 1665831474:0;cargo install --path . --locked
+: 1665831531:0;./paxr
+: 1665831548:0;./paxr orphans
+: 1665831560:0;./paxr completion
+: 1665831565:0;./paxr completion zsh
+: 1665831570:0;./paxr completion bash
+: 1665831590:0;mv paxr ~/bin
+: 1665831599:0;paxr
+: 1665831604:0;paxr up
+: 1665831616:0;paxr info
+: 1665831622:0;paxr info exa
+: 1665831664:0;cd Plantillas/git-repos/
+: 1665831670:0;cd shell-color-scripts
+: 1665831676:0;cd Sometype-Mono
+: 1665831681:0;cd xbp
+: 1665831717:0;wu
+: 1665832269:0;remove pywal
+: 1665942227:0;clar
+: 1665942231:0;pywal
+: 1666243624:0;search citations
+: 1666531645:0;nano srcpkgs/VeraCrypt/template
+: 1666531671:0;nano srcpkgs/eduke32/template
+: 1666531787:0;search mwg
+: 1666612959:0;q
+: 1666612973:0;install pywal
+: 1666613025:0;install ImageMagick
+: 1666613345:0;cd /usr/share/grub/
+: 1666613475:0;nano .config/bat/config
+: 1666613633:0;clone git clone https://github.com/catppuccin/kde catppuccin-kde
+: 1666613645:0;clone https://github.com/catppuccin/kde catppuccin-kde
+: 1666613769:0;cd zsh-syntax-highlighting
+: 1666613788:0;rip zsh-syntax-highlighting
+: 1666613943:0;nano .config
+: 1666614009:0;nano zsh_config/zsh_exports
+: 1666614113:0;install cava tty-clock
+: 1666615009:0;#1666614373
+: 1666614452:0;nano .bash_aliases
+: 1666615322:0;#1666615018
+: 1666615322:0;#1666615028
+: 1666615322:0;#1666615181
+: 1666615322:0;nano .bash_aliases 
+: 1666615322:0;#1666615193
+: 1666615322:0;source .bashrc
+: 1666615322:0;#1666615194
+: 1666615322:0;#1666615198
+: 1666615322:0;co
+: 1666615322:0;#1666615200
+: 1666636203:0;git clone https://github.com/catppuccin/grub.git && cd grub
+: 1666636236:0;sudo mkdir -p /usr/share/grub/themes
+: 1666636239:0;sudo cp -r src/* /usr/share/grub/themes/
+: 1666636969:0;cd /home/jose/.config/zathura
+: 1666636982:0;nano zathurarc
+: 1666637133:0;git clone https://github.com/catppuccin/kde catppuccin-kde
+: 1666637142:0;cd catppuccin-kde
+: 1666637157:0;find . -type f -name "*.colors" -exec cp "{}" ~/.local/share/color-schemes \;
+: 1666637169:0;find . -type f -name "*.tar.gz" -exec kpackagetool5 -i "{}" \;
+: 1666639505:0;curl -o xresources https://raw.githubusercontent.com/catppuccin/xresources/main/mocha.Xresources
+: 1666639543:0;xrdb -merge xresources
+: 1666639575:0;mv xresources .Xresources
+: 1666639616:0;xrdb -merge .Xresources
+: 1666639882:0;nano .xprofile
+: 1666639929:0;chmod +x .Xresources
+: 1666640172:0;search gst-
+: 1666640247:0;search pipewire
+: 1666658494:0;rip .cache/fontconfig
+: 1666658515:0;sf Exo
+: 1666658531:0;nano Exosev
+: 1666658535:0;sf Exose
+: 1666658760:0;nano .config/zathura/zathurarc
+: 1666658829:0;nf
+: 1666661214:0;cd .config/gzdoom
+: 1666661222:0;mv gzdoom.ini gzdoom
+: 1666665040:0;mv gzdoom gzdoom.ini
+: 1666690425:0;tM1neral1!
+: 1666715843:0;cd sddm
+: 1666715852:0;fd sddm
+: 1666715864:0;fd sddm.conf
+: 1666716213:0;search fwup
+: 1666716262:0;install fwupd
+: 1666716282:0;cd /etc/sv
+: 1666716338:0;fwupd
+: 1666716348:0;fwup
+: 1666716367:0;remove fwupd-efi
+: 1666716378:0;remove fwupd
+: 1666716397:0;install fwup
+: 1666716436:0;remove fwup
+: 1666716682:0;cd ~/.local/share/plasma/look-and-feel
+: 1666717449:0;install kate5
+: 1666718302:0;remove FeatherPad
+: 1666866864:0;cd .local/share
+: 1666866868:0;cd aurorae/themes
+: 1666866895:0;cd plasma
+: 1666866950:0;cd .themes
+: 1666866962:0;cd .icons
+: 1666866978:0;cd .local/share/icons
+: 1666867049:0;sudo xbps-remove -F oxygen
+: 1666867240:0;rip oxygen
+: 1666867247:0;sudo rip air
+: 1666867302:0;rip breeze-light
+: 1666867321:0;--
+: 1666867332:0;cd layout-templates
+: 1666867345:0;rip org.kde.breeze.desktop
+: 1666867350:0;sudo rip org.kde.breeze.desktop
+: 1666867371:0;sudo rip org.kde.breezetwilight.desktop
+: 1666867393:0;cd avatars
+: 1666867405:0;cd nightcolor
+: 1666867409:0;cd packages
+: 1666867451:0;sudo rip K*
+: 1666867458:0;rip BreezeClassic.colors
+: 1666867462:0;sudo rip BreezeClassic.colors
+: 1666867467:0;sudi rip BreezeLight.colors
+: 1666867473:0;sudo rip BreezeLight.colors
+: 1666867531:0;sudo rip breeze
+: 1666867578:0;rip Breeze_Snow
+: 1666867583:0;sudo rip Breeze_Snow
+: 1666867608:0;sudo rip Kv*
+: 1666867626:0;sudo rip Breeze
+: 1666867661:0;sudo rip Emacs
+: 1666867689:0;sudo rip Raleigh
+: 1666867711:0;rip *
+: 1666867772:0;clone https://github.com/Jiei-720p/i3wm-dotfiles-catppuccin
+: 1666867825:0;clone https://github.com/kpan1k/bspwm-rice-catppuccin
+: 1666867854:0;clone https://github.com/catppuccin/wallpapers
+: 1666867883:0;clone https://github.com/rkaramuca/catppuccin_dots
+: 1666867903:0;clone https://github.com/catppuccin/gtk
+: 1666867920:0;cd gtk
+: 1666867977:0;./build.sh
+: 1666867996:0;cd Releases
+: 1666868215:0;clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
+: 1666868431:0;clone https://github.com/catppuccin/kde
+: 1666868464:0;cd kde/Mocha
+: 1666868497:0;mkdir -p ~/.local/share/color-schemes/
+: 1666868500:0;cp Catppuccin*.colors ~/.local/share/color-schemes/
+: 1666868510:0;kpackagetool5 -i Catppuccin-*.tar.gz
+: 1666868530:0;rip ~/.local/share/plasma/desktoptheme/lightly-plasma-git/icons
+: 1666868671:0;clone https://github.com/catppuccin/zsh-syntax-highlighting
+: 1666868679:0;cd wallpapers
+: 1666868703:0;sudo cp -r flatppuccin landscapes os /usr/share/wallpapers
+: 1666868802:0;nano .Xressources
+: 1666868828:0;clone https://github.com/catppuccin/fzf
+: 1666868841:0;clone https://github.com/catppuccin/xresources
+: 1666868852:0;clone https://github.com/catppuccin/cava
+: 1666868860:0;clone https://github.com/catppuccin/fish
+: 1666868883:0;clone https://github.com/disabledandfab/catppuccin-main
+: 1666868944:0;https://github.com/catppuccin/pyradio
+: 1666868949:0;clone https://github.com/catppuccin/pyradio
+: 1666868964:0;clone https://github.com/catppuccin/bat
+: 1666868988:0;clone https://github.com/catppuccin/contour
+: 1666869141:0;clone https://github.com/catppuccin/Kvantum
+: 1666869157:0;clone https://github.com/catppuccin/cursors
+: 1666869278:0;fd flat
+: 1666869393:0;sudo rip Breeze-Dark
+: 1666869404:0;cd plasma/desktoptheme
+: 1666869691:0;clone https://github.com/catppuccin/dunst
+: 1666869710:0;clone https://github.com/catppuccin/konsole
+: 1666869731:0;clone https://github.com/catppuccin/sddm
+: 1666869745:0;cd sddm/src
+: 1666869774:0;sudo cp -r catppuccin-mocha /usr/share/themes
+: 1666869870:0;cd ~/Plantillas/Catppuccin/sddm
+: 1666869874:0;sudo cp -r catppuccin-mocha /usr/share/sddm/themes
+: 1666869881:0;cd /usr/share/themes
+: 1666869888:0;cd catppuccin-mocha
+: 1666869899:0;sudo rip catppuccin-mocha
+: 1666869998:0;sudo rip maldives maya elarun
+: 1666870092:0;clone https://github.com/catppuccin/grub
+: 1666870104:0;clone https://github.com/catppuccin/zathura
+: 1666870128:0;cd grub
+: 1666870132:0;cd src
+: 1666870167:0;sudo nano /etc/default/grub
+: 1666870400:0;cd Plantillas/Catppuccin
+: 1666870404:0;clone https://github.com/BlueFalconHD/startpage
+: 1666870411:0;cd startpage
+: 1666870418:0;npm install
+: 1666870456:0;npm audit fix
+: 1666870468:0;npm audit fix --force
+: 1666870642:0;npm run build
+: 1666870675:0;cd build
+: 1666870713:0;clone https://github.com/ljmill/catppuccin-icons
+: 1666870739:0;clone https://github.com/psylopneunonym/Catppuccin-Fractal-Wallpapers
+: 1666870773:0;clone https://github.com/RafaelCasamaximo/sddm-sugar-catppuccin-mocha
+: 1666870809:0;clone https://github.com/jrn90/catppuccin-desktop
+: 1666870838:0;clone https://github.com/alex-louvet/lightdm-gab-catppuccin
+: 1666870863:0;clone https://github.com/OlaoluwaM/notion-catppuccin
+: 1666870897:0;clone https://github.com/Ruixi-rebirth/Catppuccin-cursor
+: 1666870983:0;fd startpage
+: 1666871055:0;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+: 1666871129:0;search thelounge
+: 1666871277:0;kate
+: 1666879981:0;clone https://github.com/sioodmy/dotfiles sioddmy-dotfiles
+: 1666880035:0;clone https://github.com/CUFTA22/dotfiles CUFTA22-dotfiles
+: 1666880073:0;clone https://github.com/rkaramuca/catppuccin_dots rkaramuca-catpuccin_dots
+: 1666880087:0;clone https://github.com/catppuccin/kitty
+: 1666880110:0;clone https://github.com/hexa69/catppuccin-dotfiles hexa69-catpuccin-dotfiles
+: 1666880139:0;cargo install mdbook-catpuccin
+: 1666880165:0;cargo install mdbook-catppuccin\
+\
+
+: 1666880237:0;clone https://github.com/V2BlockBuster2K/Awespuccin
+: 1666880250:0;clone https://github.com/catppuccin/emacs
+: 1666880300:0;clone https://github.com/latipun7/dotfiles latipun7-dotfiles
+: 1666880353:0;clone https://github.com/jorgeloopzz/dotfiles jorgeloopzz-dotfiles
+: 1666880362:0;cd konsole
+: 1666880378:0;cargo install mdbook
+: 1666880435:0;clone https://github.com/ghostx31/dotfiles ghostx31-dotfiles
+: 1666880460:0;clone https://github.com/crissNb/dotfiles crissNb-dotfiles
+: 1666880551:0;clone https://github.com/catppuccin/wezterm
+: 1666880596:0;mdbook README.md
+: 1666880606:0;mdbook --help
+: 1666880625:0;mdbook build README.md
+: 1666880638:0;mdbook build
+: 1666880671:0;clone https://github.com/ukrittang/astronvim-user
+: 1666880766:0;clone https://github.com/catppuccin/foliate
+: 1666892766:0;wthrr
+: 1666892774:0;wthrr -f
+: 1666892826:0;wthrr Ottakring
+: 1666892845:0;wthrr Auf der Schmelz
+: 1666892855:0;wthrr Rudolfsheim
+: 1666892872:0;wthrr -f Rudolfsheim
+: 1666895881:0;install breeze
+: 1666896012:0;sudo xbps-remove -F breeze
+: 1666896017:0;sudo xbps-install -f breeze
+: 1666896138:0;sudo mv BreezeClassic.colors /usr/share/color-schemes
+: 1666896155:0;sudo mv BreezeDark.colors /usr/share/color-schemes
+: 1666896162:0;sudo mv BreezeLight.colors /usr/share/color-schemes
+: 1666896296:0;cd sddn
+: 1666896323:0;sudo cp -r air breeze-dark breeze-light default oxygen /usr/share/sddm/themes
+: 1666896486:0;sudo cp -r air breeze-dark/ breeze-light oxygen /usr/share/plasma/desktoptheme
+: 1666896589:0;cd /usr/share/color-schemes
+: 1666896642:0;cd home
+: 1666896647:0;cd color-schemes
+: 1666896678:0;sudo mv * /usr/share/color-schemes
+: 1666896811:0;cd /usr/share/plasma
+: 1666896835:0;cd /usr/share/plasma/desktoptheme
+: 1666896839:0;sudo rip;2u*
+: 1666896853:0;sudo rip *
+: 1666896904:0;cd desktoptheme
+: 1666896917:0;sudo mv * /usr/share/plasma/desktoptheme
+: 1666897006:0;cd /usr/share/plasma/look-and-feel
+: 1666897009:0;sudo rip org.kde.breezedark.desktop
+: 1666897029:0;cd look-and-feel
+: 1666897036:0;sudo mv * /usr/share/plasma/look-and-feel
+: 1666897100:0;cd /usr/share/icons
+: 1666897113:0;sudo rip Adwaita breeze-dark/ breeze_cursors hicolor
+: 1666897140:0;cd icons
+: 1666897146:0;sudo mv * /usr/share/icons
+: 1666897271:0;cd /usr/share/sddm/themes
+: 1666897283:0;sudo rip air breeze
+: 1666897287:0;sudo rip breeze-dark
+: 1666897291:0;sudo rip breeze-light
+: 1666897299:0;sudo rip default
+: 1666897303:0;sudo rip oxygen
+: 1666897308:0;cd themes
+: 1666897323:0;rip Nordic
+: 1666897336:0;sudo mv * /usr/share/sddm/themes
+: 1666910318:0;clone https://github.com/czipperz/tesh
+: 1666910323:0;cd tesh
+: 1666910336:0;git submodule init
+: 1666910344:0;git submodule update
+: 1666910420:0;search sdl2
+: 1666910425:0;install sdl2-devel
+: 1666910434:0;install SDL2-devel
+: 1666910467:0;install SDL2_image-devel
+: 1666910474:0;search tesh
+: 1666910487:0;install SDL2_ttf-devel
+: 1666910491:0;./build-tracy\
+
+: 1666910558:0;./build-release\
+
+: 1666910586:0;remove SDL2_ttf-devel SDL2_image-devel SDL2-devel
+: 1666952343:0;clone https://github.com/Uwo-ua/Dotfiles Uwo-ua-dotfiles
+: 1666953227:0;cd .config/neofetch
+: 1666953239:0;cp config.conf config1.conf
+: 1666953366:0;nano config.conf
+: 1666953802:0;ca
+: 1666966391:0;nano .config/wezterm/keybindings.lua
+: 1666966803:0;yz
+: 1666967067:0;npm install yarn
+: 1666967099:0;yarn -v
+: 1666967138:0;npm install prettier
+: 1666967153:0;prettier --help
+: 1666967196:0;cargo search entr
+: 1666967235:0;search entr
+: 1666967251:0;nano srcpkgs/entr
+: 1666967257:0;nano srcpkgs/entr/template
+: 1666967287:0;search bat
+: 1666967364:0;search zettl
+: 1666967368:0;search zet
+: 1666967813:0;replicode
+: 1666969053:0;search node
+: 1666969067:0;search npm
+: 1666969144:0;pipx install pipenv\
+
+: 1666969180:0;pipenv install
+: 1666969197:0;pipenv shell
+: 1666969560:0;npm i yalc -g
+: 1666969571:0;yalc
+: 1666969577:0;yalc help
+: 1666969589:0;yalc update
+: 1666969613:0;npm remove yalc
+: 1666983154:0;cd /opt
+: 1666983160:0;cd raze
+: 1666983171:0;cd gzdoom
+: 1666983249:0;yarn
+: 1666983647:0;build gzdoom
+: 1666983680:0;sudo rip /opt/gzdoom
+: 1666983728:0;cd /usr/games
+: 1666983756:0;nano srcpkgs/gzdoom/template
+: 1666983853:0;nano srcpkgs/gzdoom/patches/fix-gzdoom.pk3.patch
+: 1666983972:0;install gzdoom
+: 1666984276:0;gzdoom
+: 1666985029:0;cd Descargas/GZDoom\ v4.8.2\ Linux
+: 1666985039:0;gzdoom -h
+: 1666985049:0;gzdoom --help
+: 1666985062:0;gzdoom iwad DOOM2
+: 1666985115:0;sudo mkdir -p /opt/gzdoom/
+: 1666985131:0;sudo mv * /opt/gzdoom
+: 1666985148:0;/opt/gzdoom/gzdoom
+: 1667140563:0;git clone https://github.com/poopingpenis/void-packages
+: 1667035963:0;rip 1k3v1.0
+: 1667035965:0;rip 1k3v1.0.zip
+: 1667035973:0;rip Painkiller\ Mutilator
+: 1667035990:0;nano .nanorc
+: 1667036015:0;nano /usr/share/nanorc
+: 1667036030:0;cd /usr/share/nanorc
+: 1667036072:0;nano .inputrc
+: 1667036085:0;nano /etc/inputrc
+: 1667036185:0;cargo search gitoxide
+: 1667036215:0;cargo search gitoxide --limit 40
+: 1667036255:0;cargo install gitoxide
+: 1667036539:0;clone https://github.com/AmitGolden/dotfiles AmitGolden-dotfiles
+: 1667036626:0;cd Catppuccin-GTK-Theme
+: 1667134900:0;pip install anipy-cli
+: 1667134983:0;pip uninstall anipy-cli
+: 1667134994:0;pipx install anipy-cli
+: 1667135019:0;cd .local/bin
+: 1667135066:0;pip uninstall kitsu-py-extended
+: 1667135091:0;pip uninstall better-ffmpeg-progress
+: 1667135112:0;pip uninstall tqdm
+: 1667135131:0;pip uninstall python-dateutil
+: 1667135144:0;pip uninstall moviepy
+: 1667135163:0;pip uninstall pypresence
+: 1667135178:0;pip uninstall aiohttp
+: 1667135185:0;pip uninstall aiosignal
+: 1667135210:0;pip uninstall ffmpeg-python
+: 1667135227:0;pip uninstall decorator
+: 1667135234:0;pip uninstall proglog
+: 1667135246:0;pip uninstall numpy
+: 1667135253:0;pip uninstall imageio
+: 1667135260:0;pip uninstall imageio-ffmpeg
+: 1667135284:0;pip uninstall async-timeout yarl
+: 1667135302:0;pip uninstall frozenlist future
+: 1667135346:0;pip install normalizer
+: 1667135356:0;pip uninstall normalizer
+: 1667135368:0;pipx install anipy-cli --force
+: 1667135381:0;pipx install normalizer
+: 1667135398:0;pip uninstall node
+: 1667135410:0;install axel
+: 1667135419:0;anipy-cli
+: 1667135570:0;zee .ansiweatherrc
+: 1667135595:0;ansiweather| dotacat
+: 1667135602:0;ansiweather
+: 1667136135:0;cd xanmod
+: 1667136146:0;xbps-rindex -a *.xbps
+: 1667136369:0;nano .config/wezterm
+: 1667136375:0;cd .config/wezterm
+: 1667136658:0;nano keybindings.lua
+: 1667137329:0;konsole
+: 1667138924:0;remove linux6.0-xanmod linux6.0-xanmod-headers && sudo vkpurge rm all
+: 1667139338:0;top30
+: 1667139568:0;ft
+: 1667140570:0;man zshoptions
+: 1667140784:0;build obsidian
+: 1667140944:0;ginw
+: 1667140952:0;clone https://github.com/DeadlySquad13/WezTerm_config
+: 1667141287:0;rip WezTerm_config
+: 1667141291:0;clone https://github.com/KevinSilvester/wezterm-config
+: 1667142401:0;sf Codelia
+: 1667143306:0;nano .config/wezterm/config/launch-menu.lua
+: 1667143939:0;wezterm show-keys --lua
+: 1667144997:0;build sauerbraten
+: 1667145414:0;nano bashrc
+: 1667145414:0;nano .bashrc
+: 1667145597:0;mkdir -p heroic-games-launcher
+: 1667145919:0;cd heroic-games-launcher
+: 1667145993:0;build heroic-games-launcher
+: 1667145998:0;nano srcpkgs/heroic-games-launcher/template
+: 1667146074:0;xi sauerbraten
+: 1667146121:0;sauerbraten
+: 1667146194:0;remove sauerbraten
+: 1667146209:0;cc
+: 1667146219:0;rc
+: 1667157652:0;nano /etc locale.conf
+: 1667159676:0;crontab -e
+: 1667159793:0;hblock
+: 1667159929:0;sudo su
+: 1667171383:0;clone https://github.com/dotzenith/dotconfig dotzenith-dotconfig
+: 1667172124:0;nano .config/wezterm3/wezterm.lua
+: 1667172347:0;exitr
+: 1667172357:0;quit
+: 1667172359:0;exot
+: 1667174570:0;clone https://github.com/feelsunbreeze/.dotfiles
+: 1667176019:0;install systemsettings
+: 1667176042:0;install ksystemstats
+: 1667243110:0;cd srcpkgs/eduke32
+: 1667243396:0;xgesum -i eduke32
+: 1667243403:0;xgensum -i eduke32
+: 1667243430:0;build eduke32
+: 1667243585:0;xi eduke32
+: 1667243594:0;eduke32
+: 1667244401:0;install bzip2 cryptsetup curl ddrescue gnupg2 git gptfdisk gzip efibootmgr lvm2 lz4 makepasswd mdadm mosh nano p7zip rsync wget vim unzip xz zip zstd
+: 1667244445:0;install ddrescue
+: 1667244452:0;install gnupg2
+: 1667244464:0;install makepasswd
+: 1667244473:0;install mosh
+: 1667244479:0;search mosh
+: 1667244494:0;search zstd
+: 1667244504:0;install zstd
+: 1667244510:0;update-grub
+: 1667244561:0;search mdadm
+: 1667244574:0;search makepasswd
+: 1667244594:0;search gptfdisk
+: 1667244609:0;search ddrescue
+: 1667300485:0;sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.19.2.linux-amd64.tar.gz
+: 1667300507:0;export PATH=$PATH:/usr/local/go/bin
+: 1667300522:0;go version
+: 1667300561:0;sudo nano /etc/profile
+: 1667303397:0;mv wezterm wezterm1
+: 1667303403:0;mkdir -p wezterm
+: 1667303422:0;touch template
+: 1667304115:0;./wezterm-gui
+: 1667304142:0;xlocate -s lobssl.so.3
+: 1667304150:0;xlocate -S
+: 1667304172:0;xlocate -s libssl.so.3
+: 1667304178:0;xlocate libssl.so.3
+: 1667304203:0;install konsole
+: 1667304235:0;cd Descargas/data/usr/bin/
+: 1667304280:0;./open-wezterm-here
+: 1667304289:0;./wezterm
+: 1667304297:0;zsh
+: 1667304358:0;cd git-repos
+: 1667304404:0;remove wezterm
+: 1667304443:0;cd git-repos/wezterm
+: 1667305008:0;xi wezterm
+: 1667305287:0;bin
+: 1667305306:0;chmod +x wezterm
+: 1667305452:0;xgensum -i wezterm
+: 1667305668:0;rip bin/wezterm
+: 1667305717:0;kmenuedit
+: 1667305888:0;remove xcb-util-image-devel xcb-util-devel
+: 1667305938:0;remove fontconfig-devel
+: 1667305971:0;remove libxcb-devel
+: 1667305987:0;remove libxcb-devel libX11-devel libxkbcommon-devel
+: 1667306092:0;rip package-lock.json package.json
+: 1667306101:0;rip Pipfile Pipfile.lock
+: 1667306118:0;rip .dotfiles
+: 1667306200:0;remove konsole
+: 1667306640:0;cp .zshrc .zshrc.bak
+: 1667306664:0;install stow
+: 1667306702:0;git clone https://github.com/jandamm/zgenom.git
+: 1667306723:0;git clone https://github.com/unixorn/zsh-quickstart-kit.git
+: 1667306736:0;cd zsh-quickstart-kit
+: 1667306758:0;stow --target=~ zsh
+: 1667306775:0;stow --target="HOME" zsh
+: 1667306843:0;cd zsh
+: 1667307536:0;acs
+: 1667307577:0;llc
+: 1667307581:0;lsd
+: 1667307641:0;rip node-v18.12.0-linux-x64.tar.xz
+: 1667307644:0;rip eduke32-master-a9c797dcb60d4dfa2e21aed09e498132e59282ba.tar.gz
+: 1667307652:0;rip go1.19.2.linux-amd64.tar.gz
+: 1667307660:0;lll
+: 1667308850:0;showme https://www.youtube.com/watch\?app\=desktop\&v\=QiNNydar1E8
+: 1667308894:0;yt https://www.youtube.com/watch\?app\=desktop\&v\=QiNNydar1E8
+: 1667309694:0;pipx install pygments
+: 1667309986:0;nano srcpkgs/fd/template
+: 1667310016:0;fd _fd
+: 1667310219:0;go doc
+: 1667310271:0;cd $GOPATH
+: 1667310292:0;go gopath
+: 1667310308:0;go list
+: 1667310318:0;go help gopath
+: 1667310355:0;go env GOPATH
+: 1667310363:0;cd go
+: 1667310367:0;mkdir go
+: 1667310651:0;cd srcpkgs/wezterm
+: 1667310664:0;nano update
+: 1667310709:0;mkdir -p srcpkgs/wezterm/patches
+: 1667310736:0;touch 0001-32bit.patch\
+
+: 1667310769:0;nano 0001-32bit.patch
+: 1667310805:0;cd patches
+: 1667310830:0;touch 002-remove-distro-fonts.patch
+: 1667310841:0;nano 002-remove-distro-fonts.patch
+: 1667310887:0;mv 002-remove-distro-fonts.patch 0002-remove-distro-fonts.patch
+: 1667311219:0;nano srcpkgs/wezterm/template
+: 1667311373:0;cd srcpkgs/wezterm/patches
+: 1667311375:0;?s
+: 1667311394:0;rip patches
+: 1667311415:0;build wezterm
+: 1667311506:0;cd /usr/share/terminfo/
+: 1667311718:0;./xbps-src clean
+: 1667311724:0;./xbps-src bootstrap-update
+: 1667311742:0;vu
+: 1667311744:0;hom
+: 1667311748:0;vgl
+: 1667311766:0;vglu
+: 1667334844:0;sudo curl -sL github.com/justchokingaround/lobster/raw/main/lobster.sh -o /usr/local/bin/lobster &&\
+sudo chmod +x /usr/local/bin/lobster
+: 1667335031:0;lobster Guillermo del toro
+: 1667335073:0;lobster Gaslight
+: 1667335361:0;treefetch -b
+: 1667335511:0;cd Plantillas/git-repos/wezterm/target/release
+: 1667335705:0;install supertuxkart
+: 1667407857:0;sudo pacman -ROo
+: 1667408855:0;go get github.com/catppuccin/go
+: 1667408893:0;go install github.com/catppuccin/go
+: 1667408911:0;go install github.com/catppuccin/go@latest
+: 1667409075:0;lobster
+: 1667409114:0;lobster midnight mass
+: 1667409692:0;vl
+: 1667409712:0;clone https://github.com/intrnl/custom-void-packages intrnl-custom_void-packages
+: 1667409720:0;cd intrnl-custom_void-packages/srcpkgs
+: 1667409745:0;cp -r * /home/jose/Plantillas/void-linux/void-packages/srcpkgs
+: 1667412495:0;w
+: 1667417490:0;showme https://youtu.be/QiNNydar1E8
+: 1667426095:0;install obs
+: 1667502423:0;lobster -u
+: 1667502462:0;rm ~/.cache/lobster_history.txt && rm ~/.config/lobster/lobster_config.txt
+: 1667502480:0;rm ~/.cache/lobster_history.txt
+: 1667502490:0;rm ~/.config/lobster/lobster_config.txt
+: 1667502498:0;lobster simpsons
+: 1667502531:0;rip lobster
+: 1667502535:0;sudo rip lobster
+: 1667502562:0;rm kasts
+: 1667502566:0;sudo rip kasts
+: 1667504767:0;cledn
+: 1667504911:0;git clone https://invent.kde.org/plasma-mobile/kasts
+: 1667504973:0;nano srcpkgs/kasts
+: 1667505054:0;install extra-cmake-modules gettext pkg-config qt5-qmake qt5-host-tools kcoreaddons kconfig
+: 1667507247:0;
+: 1667505090:0;cd kasts
+: 1667505098:0;mkdir build && cd build
+: 1667505142:0;install kcoreaddons-devel syndication-devel kconfig-devel\
+ ki18n-devel threadweaver-devel qt5-quickcontrols2-devel\
+ qt5-plugin-mysql qt5-plugin-odbc qt5-plugin-pgsql libglib-devel\
+ qt5-plugin-sqlite qt5-plugin-tds qt5-multimedia-devel\
+ taglib-devel networkmanager-qt5-devel qtkeychain-qt5-devel
+: 1667505277:0;install qt5-graphicaleffects kirigami2
+: 1667505296:0;install taglib-devel networkmanager-qt5-devel qtkeychain-qt5-devel
+: 1667505312:0;install qt5-plugin-sqlite qt5-plugin-tds qt5-multimedia-devel
+: 1667505330:0;install qt5-plugin-mysql qt5-plugin-odbc qt5-plugin-pgsql libglib-devel
+: 1667505352:0;install ki18n-devel threadweaver-devel qt5-quickcontrols2-devel
+: 1667505391:0;install qt5-svg-devel
+: 1667505415:0;install kirigami2-devel
+: 1667505430:0;cmake .. -DCMAKE_PREFIX_PATH=/usr
+: 1667505453:0;make
+: 1667505836:0;sudo make install
+: 1667505848:0;kasts
+: 1667505892:0;cd /usr/bin
+: 1667505898:0;./kasts
+: 1667505915:0;install kasts
+: 1667505939:0;remove qt5-devel
+: 1667505961:0;remove kcodecs-devel kconfig-devel ki18n-devel
+: 1667505968:0;remove kcodecs-devel kconfig-devel ki18n-devel syndication-devel
+: 1667505984:0;remove cups-devel
+: 1667505995:0;remove cups-devel qt5-declarative-devel qt5-devel
+: 1667506043:0;remove cups-devel qt5-declarative-devel qt5-devel threadweaver-devel qt5-svg-devel qt5-tools-devel qt5-multimedia-devel NetworkManager-devel networkmanager-qt5-devel kirigami2-devel
+: 1667506055:0;remove cups-devel qt5-declarative-devel qt5-devel threadweaver-devel qt5-svg-devel qt5-tools-devel qt5-multimedia-devel NetworkManager-devel networkmanager-qt5-devel kirigami2-devel qt5-quickcontrols2-devel kcoreaddons-devel
+: 1667506119:0;remove zlib-devel taglib-devel pcre2-devel libpng-devel libglib-devel libblkid-devel elfutils-devel
+: 1667506128:0;remove zlib-devel taglib-devel pcre2-devel libpng-devel libglib-devel libblkid-devel elfutils-devel freetype-devel libsecret-devel
+: 1667506153:0;remove zlib-devel taglib-devel pcre2-devel libpng-devel libglib-devel libblkid-devel elfutils-devel freetype-devel libsecret-devel fontconfig-devel qtkeychain-qt5-devel
+: 1667506198:0;remove xcb-util-devel
+: 1667506205:0;remove xcb-util-devel xcb-util-image-devel
+: 1667506215:0;remove libXdmcp-devel
+: 1667506221:0;remove libXdmcp-devel libxcb-devel
+: 1667506234:0;remove libXdmcp-devel libxcb-devel libX11-devel libxkbcommon-devel
+: 1667506257:0;remove libstdc++-devel
+: 1667506278:0;remove libfl-devel
+: 1667506304:0;remove kirigami2
+: 1667506341:0;remove stow
+: 1667506356:0;remove qt5-host-tools
+: 1667506371:0;remove qt5-tools
+: 1667506419:0;remove extra-cmake-modules
+: 1667506477:0;remove qt5-qmake
+: 1667506482:0;remove qt5-quickcontrols
+: 1667506486:0;remove qt5-quickcontrols2
+: 1667506522:0;remove kasts
+: 1667508130:0;cd Descargas/doom64ex-plus-3.5.0-linux_x64
+: 1667508138:0;./DOOM64EX-Plus
+: 1667508682:0;git clone https://github.com/atsb/Doom64EX-Plus\
+
+: 1667508767:0;cd srcpkgs
+: 1667508774:0;mkdir -p lite-xl
+: 1667508780:0;cd lite-xl
+: 1667508783:0;nano template
+: 1667508798:0;build lite-xl
+: 1667508959:0;xi lite-xl
+: 1667509116:0;# Template file for 'lite-xl'
+: 1667509116:0;pkgname=lite-xl
+: 1667509116:0;version=2.1.0
+: 1667509116:0;revision=1
+: 1667509117:0;build_style=meson
+: 1667509117:0;hostmakedepends="pkg-config lua54"
+: 1667509117:0;makedepends="freetype-devel lua54-devel pcre2-devel SDL2-devel"
+: 1667509117:0;short_desc="Lightweight text editor written in Lua"
+: 1667509117:0;maintainer="Marcin Puc <tranzystorek.io@protonmail.com>"
+: 1667509117:0;license="MIT"
+: 1667509117:0;homepage="https://lite-xl.com/"
+: 1667509117:0;changelog="https://github.com/lite-xl/lite-xl/raw/master/changelog.md"
+: 1667509117:0;distfiles="https://github.com/lite-xl/lite-xl/archive/refs/tags/v${version}.tar.gz"
+: 1667509117:0;checksum=761d390d0ef2706eeed1c685211d8ff5ce63dacd51d561e56c7e0f7ec0e7ea62
+: 1667509230:0;cd Doom64EX-Plus
+: 1667509250:0;cd ..
+: 1667509261:0;nano .config/zsh_config/zsh_aliases
+: 1667509308:0;cd M√∫sica
+: 1667509316:0;install zoxide
+: 1667509335:0;c
+: 1667509455:0;cargo install zoxide
+: 1667509474:0;mkdir Doom64EX-Plus/temp
+: 1667509761:0;nano .config/zsh_config/zsh_command
+: 1667509774:0;z
+: 1667509791:0;nano .zshrc
+: 1667509809:0;cd Doom64EX-Plus/temp
+: 1667509830:0;install cmake
+: 1667509862:0;cmake .. && make
+: 1667509892:0;cmake ..
+: 1667509903:0;remove cmake
+: 1667509962:0;zoxide
+: 1667515139:0;sf FiraCode
+: 1667606595:0;rofi
+: 1667606609:0;cava
+: 1667606623:0;clock
+: 1667641697:0;nano .config/topgrade.toml
+: 1667646576:0;no
+: 1667646582:0;search scid
+: 1667646636:0;install scid
+: 1667646667:0;install scid_vs_pc
+: 1667646679:0;search stock
+: 1667646767:0;pipx install frida-tools
+: 1667647051:0;pipx install stockfish
+: 1667647073:0;pip install --user --upgrade stockfish
+: 1667647088:0;install dreamchess stockfish
+: 1667647148:0;search radar
+: 1667647190:0;nano srcpkgs/radare2/template
+: 1667647205:0;install radare2
+: 1667647292:0;frida-trace -i *move* dreamchess
+: 1667647329:0;remove dreamchess stockfish radare2
+: 1667647363:0;pipx uninstall frida-tools
+: 1667647379:0;pipx uninstall colorz
+: 1667647385:0;pipx uninstall pycowsay
+: 1667647397:0;cd .config
+: 1667647418:0;nano auroraerc
+: 1667647438:0;rip FeatherPadrc
+: 1667648481:0;to40
+: 1667648483:0;top40
+: 1667650671:0;build lxqt-panel
+: 1667650709:0;cd ytfzf
+: 1667650718:0;sudo make install doc
+: 1667650771:0;nano .config/starship.toml
+: 1667650830:0;nano srcpkgs/lxqt-panel/template
+: 1667650845:0;xgensum -i lxqt-panel
+: 1667650970:0;remove zlib-devel
+: 1667650976:0;remove zlib-devel libpng-devel
+: 1667650981:0;remove zlib-devel libpng-devel freetype-devel
+: 1667650988:0;remove zlib-devel libpng-devel freetype-devel fontconfig-devel
+: 1667650994:0;sudo xbps-remove -Oo
+: 1667651006:0;remove libXau-devel
+: 1667651013:0;remove libXau-devel libxcb-devel
+: 1667651035:0;remove libXau-devel libxcb-devel libX11-devel libxkbcommon-devel xcb-util-devel
+: 1667651043:0;remove libXau-devel libxcb-devel libX11-devel libxkbcommon-devel xcb-util-devel xcb-util-image-devel
+: 1667651088:0;remove libssp-devel
+: 1667651208:0;reboot
+: 1667677282:0;build brave-nightly-bin
+: 1667677318:0;rip .nvm
+: 1667677360:0;npm uninstall yarn
+: 1667677410:0;cargo uninstall gitoxide
+: 1667677463:0;cd hostdir/binpkgs
+: 1667678705:0;xgensum -i nvim-nightly
+: 1667678728:0;xgensum -i neovim-nightly
+: 1667678863:0;nano srcpkgs/neovide/template
+: 1667678944:0;build asciidoc
+: 1667679099:0;build neovim-nightly
+: 1667679157:0;nvim
+: 1667679312:0;nvim Manual.md
+: 1667679338:0;rip eduke32.log
+: 1667679345:0;xgensum -i neovide
+: 1667679452:0;neovide README.md
+: 1667679648:0;build neovide
+: 1667679868:0;neovide .zsh_history
+: 1667688665:0;rip .npm
+: 1667688672:0;cd .local
+: 1667688687:0;npm uninstall npm
+: 1667688709:0;cd lib
+: 1667688715:0;cd nvim
+: 1667688718:0;cd parser
+: 1667688733:0;cd node_modules
+: 1667688740:0;cd npm
+: 1667688749:0;...
+: 1667688752:0;cd share
+: 1667688757:0;cd applications
+: 1667688791:0;cd mime/
+: 1667688808:0;sh aliases
+: 1667688811:0;nano aliases
+: 1667688835:0;npm
+: 1667688854:0;npm install -g npm
+: 1667688937:0;sudo fdisk -l
+: 1667689574:0;wthrr Rudolfsheim -f
+: 1667728395:0;nvim .zshrc
+: 1667728570:0;weather
+: 1667728963:0;search curlie
+: 1667728972:0;cargo search curlie
+: 1667729030:0;go install github.com/rs/curlie@latest
+: 1667729106:0;curlie
+: 1667729131:0;cd go/bin
+: 1667729139:0;./curlie --help
+: 1667729158:0;nano .config/zsh_config/zsh_exports
+: 1667729284:0;curlie -h
+: 1667729517:0;curl https://cht.sh/:cht.sh > "$HOME/bin/cht.sh"
+: 1667729524:0;chmod +x bin/cht.sh
+: 1667729550:0;cht.sh -h
+: 1667729634:0;install xsel rlwrap
+: 1667729641:0;cht.sh --shell
+: 1667729676:0;remove xsel rlwrap
+: 1667729798:0;pipx install "textual[dev]"
+: 1667729814:0;textual
+: 1667729831:0;python -m textual
+: 1667729843:0;pipx textual
+: 1667729861:0;pip install --user --upgrade "textual[dev]"
+: 1667729879:0;python -m textual\
+
+: 1667729981:0;nano .config/zsh_config/zsh_path
+: 1667729990:0;sz
+: 1667730009:0;go
+: 1667730019:0;go get -u github.com/wtfutil/wtf
+: 1667730074:0;search wtf
+: 1667730109:0;cd bin
+: 1667730114:0;chmod +x wtfutil
+: 1667730119:0;wtfutil
+: 1667730206:0;cargo search hyperfine
+: 1667730215:0;cargo install hyperfine
+: 1667730239:0;navi
+: 1667730323:0;gsu
+: 1667730439:0;sudo wget https://github.com/sqshq/sampler/releases/download/v1.1.0/sampler-1.1.0-linux-amd64 -O /usr/local/bin/sampler
+: 1667730471:0;sudo chmod +x sampler
+: 1667730476:0;sampler
+: 1667730493:0;sampler --config example.yml
+: 1667730509:0;sampler -c config.yml
+: 1667730757:0;pipx install google_images_download
+: 1667730841:0;wezterm -V
+: 1667730884:0;remove libX11-devel
+: 1667730894:0;remove xorgproto
+: 1667730904:0;remove xorgproto libXau-devel libXdmcp-devel
+: 1667730911:0;remove xorgproto libXau-devel libXdmcp-devel libxcb-devel
+: 1667730932:0;remove xorgproto libXau-devel libXdmcp-devel libxcb-devel xcb-util-image-devel xcb-util-devel libxkbcommon-devel
+: 1667730944:0;sudo xbps-remove -ROo
+: 1667731157:0;wezterm
+: 1667731173:0;remove pkgconf
+: 1667731316:0;pipx install gitsome
+: 1667731339:0;pip install --user --upgrade gitsome
+: 1667731360:0;pip uninstall gitsome
+: 1667731714:0;cd /usr/local/bin
+: 1667731722:0;sudo rip sampler
+: 1667731770:0;rip sulfur.wad
+: 1667731773:0;nano Im√ÉÅgenes
+: 1667731778:0;nano .initrc
+: 1667731809:0;cd Young.Royals.S01.SWEDISH.1080p.NF.WEBRip.DDP5.1.x264-FORSEE\[rartv\]
+: 1667731817:0;mpv Young.Royals.S01E02.1080p.WEB.H264-FORSEE.mkv
+: 1667735530:0;search taglig
+: 1667735534:0;search taglib
+: 1667735544:0;search kde-gra
+: 1667735550:0;search kdegra
+: 1667735563:0;install kdegraphics-mobipocket kdegraphics-thumbnailers
+: 1667735574:0;search kimage
+: 1667735584:0;install kimageformats
+: 1667735592:0;search qt5-im
+: 1667735599:0;install qt5-imageformats
+: 1667735609:0;search resv
+: 1667735615:0;install resvg
+: 1667735633:0;search kdesdk
+: 1667735649:0;install ffmpegthumbs
+: 1667735659:0;search raw
+: 1667735677:0;install taglib
+: 1667743439:0;search mastodon
+: 1667743463:0;install toot
+: 1667743479:0;pipx install toot
+: 1667743500:0;toot login
+: 1667743600:0;toot
+: 1667743616:0;toot tui
+: 1667743748:0;toot search linux
+: 1667745210:0;sudo reboot
+: 1667748289:0;cd Catppuccin
+: 1667748297:0;clone https://github.com/iruzo/catppuccin-crt
+: 1667748355:0;search cool-retro
+: 1667748359:0;install cool-retro-term
+: 1667748656:0;remove cool-retro-term
+: 1667748744:0;nano .config/wezterm/wezterm.lua
+: 1667752070:0;covat
+: 1667752496:0;install
+: 1667752502:0;clear
+: 1667752507:0;installed
+: 1667769580:0;clone https://github.com/PureArtistry/oi
+: 1667769583:0;cd oi
+: 1667769588:0;./install.sh
+: 1667769717:0;oi
+: 1667769721:0;oi --help
+: 1667769760:0;oi viena
+: 1667769783:0;oi viena --all
+: 1667769820:0;./uninstall.sh
+: 1667806057:0;pip uninstall cmark
+: 1667806068:0;pip uninstall charset-normalizer
+: 1667806087:0;pip uninstall commonmark
+: 1667806095:0;pipx install commonmark
+: 1667806105:0;pipx install commonmark --forcer
+: 1667806107:0;pipx install commonmark --force
+: 1667806123:0;pip uninstall textual
+: 1667806134:0;pipx install textual --force
+: 1667806165:0;pip uninstall pygments
+: 1667806178:0;pipx install pygments --force
+: 1667807021:0;pipx install lovesay
+: 1667807030:0;lovesay
+: 1667807056:0;lovesay #ViernesDeEscritorio
+: 1667807074:0;lovesay "#ViernesDeEscritorio"
+: 1667807129:0;lovesay -c catppuccin
+: 1667807146:0;lovesay -c catppuccin-mocha
+: 1667807332:0;wget -O ~/.bashrc https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc/download
+: 1667807344:0;bashrc
+: 1667807346:0;bash
+: 1667841421:0;restricted
+: 1667841490:0;non-free
+: 1667841530:0;nvidia
+: 1667841591:0;search dkms
+: 1667841685:0;v
+: 1667841687:0;build wps-office
+: 1667842304:0;xi wps-office
+: 1667850484:0;update
+: 1667850498:0;cd wezterm
+: 1667850501:0;gl
+: 1667850509:0;git submodule update --init --recursive
+: 1667850523:0;./get-deps
+: 1667850545:0;cargo build --release --features distro-defaults
+: 1667851380:0;cargo run --release --bin wezterm -- start
+: 1667851406:0;remove xtrans xorgproto
+: 1667851439:0;remove xtrans xorgproto pkgconf libX11-devel libXau-devel libXdmcp-devel
+: 1667851450:0;remove xtrans xorgproto pkgconf libX11-devel libXau-devel libXdmcp-devel libxcb-devel
+: 1667851473:0;remove xtrans xorgproto pkgconf libX11-devel libXau-devel libXdmcp-devel libxcb-devel xcb-util-image-devel libxkbcommon-devel
+: 1667851481:0;remove xtrans xorgproto pkgconf libX11-devel libXau-devel libXdmcp-devel libxcb-devel xcb-util-image-devel libxkbcommon-devel xcb-util-devel
+: 1667851502:0;remove expat-devel
+: 1667851507:0;remove expat-devel fontconfig-devel
+: 1667851517:0;neofetch
+: 1667851527:0;remove wayland-devel
+: 1667851540:0;cd target/release
+: 1667851544:0;./wezterm -V
+: 1667851733:0;r
+: 1667851740:0;clone https://github.com/atanunq/viu
+: 1667851768:0;cargo install viu
+: 1667851813:0;cd Im√ÉÅgenes
+: 1667851817:0;cd walls
+: 1667851836:0;vi a.jpg
+: 1667851845:0;viu logo.png
+: 1667851856:0;viu wall1.jpg
+: 1667851885:0;viu yosemite.png
+: 1667851895:0;viu cat.png
+: 1667851904:0;sudo poweroff
+: 1667864758:0;t
+: 1667864859:0;cd /opt/gzdoom
+: 1667864864:0;..
+: 1667864870:0;sudo rip gzdoom
+: 1667865013:0;cd Descargas
+: 1667865027:0;sudo mv gzdoom /opt
+: 1667865610:0;home
+: 1667865632:0;clean
+: 1667866119:0;lc
+: 1667866128:0;ld
+: 1667866130:0;la
+: 1667866144:0;trash
+: 1667866154:0;sudo vkpurge rm all
+: 1667866191:0;ez
+: 1667866196:0;edut
+: 1667866207:0;ls
+: 1667866214:0;edit .bashrc
+: 1667866219:0;nano .config/zsh_config/zsh_aliases_co
+: 1667866237:0;hh edit
+: 1667866249:0;mcfly
+: 1667866279:0;mcfly init
+: 1667866285:0;mcfly init zsh
+: 1667866289:0;:q
+: 1667866291:0;exit
+: 1667866297:0;hh edit
+: 1667866308:0;nano .config/zsh_config/zsh_aliases_co
+: 1667866345:0;nano .config/zsh_config/zsh_aliases
+: 1667866372:0;ls
+: 1667866390:0;nano .config/zsh_config/zsh_aliases
+: 1667866418:0;sz
+: 1667866422:0;la
+: 1667866433:0;nano .config/zsh_config/zsh_aliases
+: 1667866465:0;sz
+: 1667866470:0;ls
+: 1667866481:0;nano .config/zsh_config/zsh_aliases
+: 1667866508:0;folders
+: 1667866523:0;nano .config/zsh_config/zsh_aliases
+: 1667866545:0;cc
+: 1667866562:0;batt
+: 1667866577:0;probe
+: 1667866585:0;search hw-probe
+: 1667866590:0;search probe
+: 1667866597:0;xlocate hw-probe
+: 1667866605:0;xlocate -S
+: 1667866622:0;xlocate probe
+: 1667866699:0;nano .config/zsh_config/zsh_aliases_void
+: 1667866727:0;sz
+: 1667866733:0;rc
+: 1667866742:0;nano .config/zsh_config/zsh_aliases_co
+: 1667866871:0;clear
+: 1667866872:0;lsx
+: 1667866876:0;ls-x
+: 1667866899:0;cat .zshrc
+: 1667866910:0;bat .zshrc
+: 1667866937:0;batcat .zshrc
+: 1667866983:0;bat -A /etc/hosts
+: 1667867014:0;curl -s https://sh.rustup.rs | bat
+: 1667867082:0;nano .config/zsh_config/zsh_command
+: 1667867100:0;sz
+: 1667867111:0;nano .config/zsh_config/zsh_exports
+: 1667867168:0;search less
+: 1667867180:0;search most
+: 1667867201:0;nano .config/zsh_config/zsh_exports
+: 1667867242:0;nano .config/zsh_config/zsh_functions
+: 1667867306:0;nano .config/zsh_config/zsh_histf
+: 1667867324:0;sz

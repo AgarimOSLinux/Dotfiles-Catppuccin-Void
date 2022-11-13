@@ -1,0 +1,334 @@
+# Searches for text in all files in the current folder
+function findtext() {
+	# If ripgrep is installed, use that
+	# Link: https://github.com/BurntSushi/ripgrep
+	if [[ -x "$(command -v rg)" ]]; then
+		rg --pretty "${@}" | more
+
+	else # Use grep
+		# -i case-insensitive
+		# -I ignore binary files
+		# -H causes filename to be printed
+		# -r recursive search
+		# -n causes line number to be printed
+		# optional: -F treat search term as a literal, not a regular expression
+		# optional: -l only print filenames and not the matching lines ex. grep -irl "$@" *
+		grep -iIHrn --color=always "${@}" . | $PAGER -r
+	fi
+}
+
+# Searches for text in source code files located in the current path
+function findcode() {
+	# If ripgrep is installed, use that
+	# Link: https://github.com/BurntSushi/ripgrep
+	if [[ -x "$(command -v rg)" ]]; then
+		rg --pretty "${@}" -g '*.{ada,asm,c,cbl,conf,cpp,cpy,cs,css,f,f90,for,go,groovy,h,hpp,htm,html,inc,ini,java,js,json,lib,lua,m,mat,mk,php,pl,py,r,rb,rlib,rs,sc,scala,scss,sh,sql,swift,tcl,template,tpl,ts,vb,vba,vbs,xml,yaml,yml}' | more
+
+	# If The Silver Searcher is installed, use that
+	# Link: https://github.com/ggreer/the_silver_searcher
+	elif [[ -x "$(command -v ag)" ]]; then
+		ag --color --ignore-case --hidden --literal --ignore "*.min.*" --file-search-regex ".*\.(ada|asm|c|cbl|conf|cpp|cpy|cs|css|f|f90|for|go|groovy|h|hpp|htm|html|inc|ini|java|js|json|lib|lua|m|mat|mk|php|pl|py|r|rb|rlib|rs|sc|scala|scss|sh|sql|swift|tcl|template|tpl|ts|vb|vba|vbs|xml|yaml|yml)"
+
+	else
+		grep -iIHrnF --color=always \
+			--include=*.ada \
+			--include=*.asm \
+			--include=*.c \
+			--include=*.cbl \
+			--include=*.conf \
+			--include=*.cpp \
+			--include=*.cpy \
+			--include=*.cs \
+			--include=*.css \
+			--include=*.f \
+			--include=*.f90 \
+			--include=*.for \
+			--include=*.go \
+			--include=*.groovy \
+			--include=*.h \
+			--include=*.hpp \
+			--include=*.htm \
+			--include=*.html \
+			--include=*.inc \
+			--include=*.ini \
+			--include=*.java \
+			--include=*.js \
+			--include=*.json \
+			--include=*.lib \
+			--include=*.lua \
+			--include=*.m \
+			--include=*.mat \
+			--include=*.mk \
+			--include=*.php \
+			--include=*.pl \
+			--include=*.py \
+			--include=*.r \
+			--include=*.rb \
+			--include=*.rlib \
+			--include=*.rs \
+			--include=*.sc \
+			--include=*.scala \
+			--include=*.scss \
+			--include=*.sh \
+			--include=*.sql \
+			--include=*.swift \
+			--include=*.tcl \
+			--include=*.template \
+			--include=*.tpl \
+			--include=*.ts \
+			--include=*.vb \
+			--include=*.vba \
+			--include=*.vbs \
+			--include=*.xml \
+			--include=*.yaml \
+			--include=*.yml \
+			--exclude='*.min.*' \
+			"${@}" . | $PAGER -r
+	fi
+}
+
+# Copy file with a progress bar
+function cpp() {
+	if [[ -x "$(command -v rsync)" ]]; then
+		rsync -ap "${1}" "${2}"
+	else
+		set -e
+		strace -q -ewrite cp -- "${1}" "${2}" 2>&1 \
+		| awk '{
+		count += $NF
+		if (count % 10 == 0) {
+			percent = count / total_size * 100
+			printf "%3d%% [", percent
+			for (i=0;i<=percent;i++)
+				printf "="
+				printf ">"
+				for (i=percent;i<100;i++)
+					printf " "
+					printf "]\r"
+				}
+			}
+		END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
+	fi
+}
+
+# Copy and go to the directory
+function cpg() {
+	if [[ -d "$2" ]];then
+		cp "$1" "$2" && cd "$2"
+	else
+		cp "$1" "$2"
+	fi
+}
+
+# Move and go to the directory
+function mvg() {
+	if [[ -d "$2" ]];then
+		mv "$1" "$2" && cd "$2"
+	else
+		mv "$1" "$2"
+	fi
+}
+
+# Create and go to the directory
+function mkdirg() {
+	mkdir -p "$@"
+	cd "$@"
+}
+
+# Function to recursively set permissions for only files
+function chmodfiles() {
+	# If the second parameter is not passed, set to the current working directory using $PWD
+	local _directory="${2:-${PWD}}"
+	local _permission="$1"
+
+	# Exit if the directory does not exist
+	if [ -z "$_permission" ]; then
+		echo "Sets permissions for files recursively"
+		echo "Syntax:";
+		echo "  chmodfiles [mode] [optional folder]";
+		echo "Example:";
+		echo "  chmodfiles 664";
+		echo "  chmodfiles +x /some/path";
+		return 1;
+	fi
+
+	# Exit if the directory does not exist
+	if [ ! -d "$_directory" ]; then
+		echo "Error: Directory $_directory not found.";
+		return 2;
+	fi
+
+	# Get confirmation
+	echo "This will recursively change all permissions to $_permission for the files in the directory:"
+	echo "$_directory"
+
+	if ask "Are you sure?" N; then
+		find "$_directory" -type f -exec chmod $_permission {} \;
+		echo "Done."
+	fi
+}
+
+# Function to recursively set permissions for only directories
+function chmoddirs() {
+	# If the second parameter is not passed, set to the current working directory using $PWD
+	local _directory="${2:-${PWD}}"
+	local _permission="$1"
+
+	# Exit if the directory does not exist
+	if [ -z "$_permission" ]; then
+		echo "Sets permissions for directories recursively"
+		echo "Syntax:";
+		echo "  chmoddirs [mode] [optional folder]";
+		echo "Example:";
+		echo "  chmoddirs 775";
+		echo "  chmoddirs +x /some/path";
+		return 1;
+	fi
+
+	# Exit if the directory does not exist
+	if [ ! -d "$_directory" ]; then
+		echo "Error: Directory $_directory not found.";
+		return 2;
+	fi
+
+	# Get confirmation
+	echo "This will recursively change all permissions to $_permission for the directories:"
+	echo "$_directory"
+
+	if ask "Are you sure?" N; then
+		find "$_directory" -type d -name \* -exec chmod $_permission {} \;
+		echo "Done."
+	fi
+}
+
+
+
+# Fixes permissions in a user's home folder
+# If no user is specified, the current user is selected
+function fixuserhome() {
+	# If no parameter was specified...
+	if [[ -z "${@}" ]]; then
+		# Use the current user
+		local _username="$(whoami)"
+	else
+		# Use the passed in parameter
+		local _username="${@}"
+	fi
+
+	# If the home folder doesn't exist...
+	if [ ! -d "/home/${_username}" ]; then
+		echo "Error: User ${_username} does not have a home folder."
+		return 1
+	fi
+
+	# Confirm
+	echo -e -n "\033[1;31mWARNING:\033[0m This will change all permissions for user \033[0;36m${_username}\033[0m! "
+	if ask "Are you sure?" N; then
+
+		echo -e "\033[1;32mâœ“\033[0m Setting the owner and group as ${_username}..."
+		sudo chown -R ${_username}:${_username} /home/${_username}
+
+		echo -e "\033[1;32mâœ“\033[0m Make sure we have read and write access to all files..."
+		sudo chmod -R u+rw /home/${_username}
+
+		echo -e "\033[1;32mâœ“\033[0m Remove write access from group..."
+		sudo chmod -R g-w /home/${_username}
+
+		echo -e "\033[1;32mâœ“\033[0m Remove all access from others..."
+		sudo chmod -R o-rwx /home/${_username}
+
+		echo -e "\033[1;32mâœ“\033[0m Make sure all directories are executable (may take several minutes)..."
+		sudo find /home/${_username} -type d -name \* -exec chmod +x {} \;
+
+		echo -e "\033[1;32mâœ“\033[0m Make shell scripts executable in the main home folder..."
+		sudo chmod ug+x /home/${_username}/{.,}*.sh
+
+		if [[ -d "/home/${_username}/.ssh" ]]; then
+			echo -e "\033[1;32mâœ“\033[0m Remove all access except user to .ssh and private keys..."
+			sudo chmod -R go-rwx /home/${_username}/.ssh
+		fi
+
+		echo "Done!"
+	else
+		return 0
+	fi
+}
+
+# Search process names to kill
+# https://unix.stackexchange.com/questions/443472/alias-for-killing-all-processes-of-a-grep-hit
+function smash () {
+	local T_PROC=$1
+	local T_PIDS=($(pgrep -i "$T_PROC"))
+	if [[ "${#T_PIDS[@]}" -ge 1 ]]; then
+		echo "Found the following processes:"
+		for pid in "${T_PIDS[@]}"; do
+			echo "$pid" "$(\ps -p "$pid" -o comm= | awk -F'/' '{print $NF}')" | column -t
+		done
+		if ask "Kill them?" N; then
+			for pid in "${T_PIDS[@]}"; do
+				echo "Killing ${pid}..."
+				( kill -15 "$pid" ) && continue
+				sleep 2
+				( kill -2 "$pid" ) && continue
+				sleep 2
+				( kill -1 "$pid" ) && continue
+				echo "Cannot terminate" >&2 && return 1
+			done
+		else
+			echo "Exiting..."
+			return 0
+		fi
+	else
+		echo "No processes found for: $1" >&2 && return 1
+	fi
+}
+
+# Long format directory listing with color columns (only requires gawk)
+function llcolor {
+	if [[ -x "$(command -v gawk)" ]]; then
+		# Show long directory listings with color columns
+		\ls -l --all --classify --group-directories-first --human-readable --color=always "$@" | awk '
+			BEGIN {
+				FPAT = "([[:space:]]*[^[:space:]]+)";
+				OFS = "";
+			}
+			{
+				$1 = "\033[0;37m" $1 "\033[0m";
+				$2 = "\033[0;34m" $2 "\033[0m";
+				$3 = "\033[0;35m" $3 "\033[0m";
+				$4 = "\033[0;31m" $4 "\033[0m";
+				$5 = "\033[0;33m" $5 "\033[0m";
+				$6 = "\033[0;32m" $6 "\033[0m";
+				$7 = "\033[0;32m" $7 "\033[0m";
+				$8 = "\033[0;36m" $8 "\033[0m";
+				print
+			}
+		'
+	else # Gawk not installed...
+		# Show long directory listings with highest compatibility
+		\ls -Fls "$@"
+	fi
+}
+
+
+
+
+# For some reason, rot13 pops up everywhere
+function rot13() {
+	if [[ $# -eq 0 ]]; then
+		tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
+	else
+		echo $* | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
+	fi
+}
+
+# Trim leading and trailing spaces
+function trim() {
+	local var=$@
+	var="${var#"${var%%[![:space:]]*}"}"  # remove leading whitespace characters
+	var="${var%"${var##*[![:space:]]}"}"  # remove trailing whitespace characters
+	echo -n "$var"
+}
+
+
+autoload -Uz lsx

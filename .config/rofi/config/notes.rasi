@@ -1,0 +1,83 @@
+/**
+ * https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown#name-1
+ */
+
+@import "font.rasi"
+@import "colors.rasi"
+
+* {
+  accentcolor: @BGA;
+  backgroundcolor:  @BG;
+  separatorcolor: transparent;
+  foregroundcolor: @FG;
+  selectioncolor: #89dceb;
+  opacity: 0%;
+  background-color: transparent;
+  text-color: @BGA;
+}
+
+#window {
+    width: 25%;
+    y-offset: -20%;
+    padding: 30px 30px;
+    border-radius: 0px;
+    font: "Comfortaa 12";
+    location: 0;
+    background-color: @BG;
+    border-color: @BGA;
+    border: 2px;
+    padding: 14 0;
+    border-radius: 5px;
+}
+/**
+ * Input box
+ */
+
+#listview {
+    fixed-height: 		false;
+    dynamic: 			true;
+    lines: 5;
+    spacing: 0px;
+    padding: 0px -10px;
+}
+
+#element {
+  spacing: 2;
+  padding: 8;
+}
+
+#element.selected.normal {
+  text-color: #89dceb;
+  background-color: @BG;
+}
+
+
+#inputbar {
+  border: none;
+  children: [textboxicon, entry];
+}
+
+#textboxicon {
+  font: "Iosevka Hololight 17";
+  str: "ﴬ";
+  text-color: #89dceb;
+  padding: 0px 0px 5px 10px;
+  expand: false;
+}
+
+#prompt {
+  color: @BGA;
+}
+
+#entry {
+  padding: 3.5px 0px 10px 10px;
+  font: "Iosevka Hololight 14";
+
+}
+/**
+ * List
+ */
+
+element-text {
+  padding: 4 4 4 12;
+}
